@@ -1,0 +1,36 @@
+{
+  "name": "eutil",
+  "version": "0.0.1",
+  "description": "meteor util node Extended   util",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OSMeteor/eutil.git"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "keywords": [
+    "eutil",
+    "util",
+    "nodeutil",
+    "utilities"
+  ],
+  "author": {
+    "name": "osmeteor",
+    "email": "meteorsoftware@qq.com"
+  },
+  "license":  [
+    {
+      "type": "MIT",
+      "url": "http://github.com/gillesruppert/mutil/raw/master/LICENSE"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/OSMeteor/eutil/issues"
+  },
+  "homepage": "https://github.com/OSMeteor/eutil"
+}
