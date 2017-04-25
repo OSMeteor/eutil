@@ -1,6 +1,6 @@
 {
   "name": "eutil",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "meteor util node Extended   util",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "name": "osmeteor",
     "email": "meteorsoftware@qq.com"
   },
-  "license":  [
+  "license": [
     {
       "type": "MIT",
       "url": "http://github.com/OSMeteor/eutil/raw/master/LICENSE"
@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/OSMeteor/eutil/issues"
   },
-  "homepage": "https://github.com/OSMeteor/eutil"
+  "homepage": "https://github.com/OSMeteor/eutil",
+  "devDependencies": {
+    "chai": "^3.5.0"
+  }
 }
