@@ -25,6 +25,8 @@ module.exports={
    dateGetGMT:dt.dateGetGMT,
    dateGetStandardTimeZone:dt.dateGetStandardTimeZone,
    dateGetDateFromOffset:dt.dateGetDateFromOffset,
+   dateGetDayOfStart:dt.dateGetDayOfStart,
+   dateGetDayOfEnd:dt.dateGetDayOfEnd,
    isUndefined:tf.isUndefined,
    isDefined:tf.isDefined,
    isObject:tf.isObject,
