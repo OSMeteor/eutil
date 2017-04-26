@@ -8,6 +8,7 @@ var dt=require('./lib/date');
 var tf=require('./lib/typeof');
 var str=require('./lib/str');
 //
+var  t=0, tlength=Object.keys(str).length;
 var str_index="var dt=require('./lib/date'); \n";
 str_index+="var tf=require('./lib/typeof'); \n";
 str_index+="var str=require('./lib/str'); \n";
@@ -20,7 +21,8 @@ for (var item in tf){
     str_index+="   "+item+":tf."+item+",\n";
 }
 for (var item in str){
-    str_index+="   "+item+":str."+item+",\n";
+    t++ ; if (t>=tlength) str_index+="   "+item+":str."+item+"\n";
+    else str_index+="   "+item+":str."+item+",\n";
 }
 str_index+="};\n";
 fs.writeFile('./index.js', str_index, function(err) {

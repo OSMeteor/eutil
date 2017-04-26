@@ -1,7 +1,7 @@
-var dt=require('./lib/date');
-var tf=require('./lib/typeof');
-var str=require('./lib/str');
-module.exports={
+var dt=require('./lib/date'); 
+var tf=require('./lib/typeof'); 
+var str=require('./lib/str'); 
+module.exports={ 
    dateFormat:dt.dateFormat,
    dateGetDataString:dt.dateGetDataString,
    dateGetDataStringNUmber:dt.dateGetDataStringNUmber,
@@ -81,5 +81,6 @@ module.exports={
    strVerifyPassword:str.strVerifyPassword,
    strIsInt:str.strIsInt,
    strCloneObj:str.strCloneObj,
-   strBaseConverter:str.strBaseConverter
+   strBaseConverter:str.strBaseConverter,
+   strPadstr:str.strPadstr
 };

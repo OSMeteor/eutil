@@ -1,6 +1,6 @@
 {
   "name": "eutil",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "meteor util node Extended   util",
   "main": "index.js",
   "scripts": {
@@ -32,8 +32,5 @@
   "bugs": {
     "url": "https://github.com/OSMeteor/eutil/issues"
   },
-  "homepage": "https://github.com/OSMeteor/eutil",
-  "devDependencies": {
-    "chai": "^3.5.0"
-  }
+  "homepage": "https://github.com/OSMeteor/eutil"
 }
