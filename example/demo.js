@@ -8,6 +8,9 @@ var eutil=require('../index');
 console.log("**************date**********************");
 console.log("strVerifyPassword -->",eutil.strVerifyPassword("234as5s"));
 console.log("dateGetDataString now-->",eutil.dateGetDataString());
+
+console.log("dateGetNextDay  -->",eutil.dateFormat( eutil.dateGetNextDay(null,5),"yyyy-MM-dd hh:mm:ss S"));
+console.log("dateGetBeforeDay  -->",eutil.dateFormat( eutil.dateGetBeforeDay(null,5),"yyyy-MM-dd hh:mm:ss S"));
 console.log("dateGetDataStringNUmber now-->",eutil.dateGetDataStringNUmber());
 console.log("dateFormat 1111-->",eutil.dateFormat( eutil.dateGetDayOfStart(),"yyyy-MM-dd hh:mm:ss S"));
 console.log("dateFormat 0000000-->",eutil.dateFormat( eutil.dateGetDayOfEnd(),"yyyy-MM-ddThh:mm:ss S"));
