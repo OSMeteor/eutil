@@ -11,6 +11,20 @@ console.log("dateGetDataString now-->",eutil.dateGetDataString());
 
 console.log("dateGetNextDay  -->",eutil.dateFormat( eutil.dateGetNextDay(null,5),"yyyy-MM-dd hh:mm:ss S"));
 console.log("dateGetBeforeDay  -->",eutil.dateFormat( eutil.dateGetBeforeDay(null,5),"yyyy-MM-dd hh:mm:ss S"));
+var daybreakSection=eutil.dateGetDayOfDaybreakSection(null,5);
+console.log("daybreakSection  -->",eutil.dateFormat(daybreakSection.start,"yyyy-MM-dd hh:mm:ss S")
+    ,'------ ',eutil.dateFormat(daybreakSection.end,"yyyy-MM-dd hh:mm:ss S"));
+var daybreakSectionDay=eutil.dateGetDayOfDaybreakSectionDay(null,6);
+console.log("daybreakSectionDay  -->",eutil.dateFormat(daybreakSectionDay.start,"yyyy-MM-dd hh:mm:ss S")
+    ,'------ ',eutil.dateFormat(daybreakSectionDay.end,"yyyy-MM-dd hh:mm:ss S"));
+var dateGetDayOfDaybreakSectionDayBefore=eutil.dateGetDayOfDaybreakSectionDayBefore(null,6);
+console.log("dateGetDayOfDaybreakSectionDayBefore  -->",eutil.dateFormat(dateGetDayOfDaybreakSectionDayBefore.start,"yyyy-MM-dd hh:mm:ss S")
+    ,'------ ',eutil.dateFormat(dateGetDayOfDaybreakSectionDayBefore.end,"yyyy-MM-dd hh:mm:ss S"));
+var dateGetDayOfDaybreakSectionDayNext=eutil.dateGetDayOfDaybreakSectionDayNext(null,6);
+console.log("dateGetDayOfDaybreakSectionDayNext  -->",eutil.dateFormat(dateGetDayOfDaybreakSectionDayNext.start,"yyyy-MM-dd hh:mm:ss S")
+    ,'------ ',eutil.dateFormat(dateGetDayOfDaybreakSectionDayNext.end,"yyyy-MM-dd hh:mm:ss S"));
+
+
 console.log("dateGetDataStringNUmber now-->",eutil.dateGetDataStringNUmber());
 console.log("dateFormat 1111-->",eutil.dateFormat( eutil.dateGetDayOfStart(),"yyyy-MM-dd hh:mm:ss S"));
 console.log("dateFormat 0000000-->",eutil.dateFormat( eutil.dateGetDayOfEnd(),"yyyy-MM-ddThh:mm:ss S"));
