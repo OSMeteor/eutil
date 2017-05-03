@@ -5,6 +5,17 @@
 // var eutil=require('eutil');
 var eutil=require('../index');
 /**************date**********************/
+
+// 开始时间:1900-01-01T00:00:00
+// 结束时间:9999-12-31T23:59:59
+console.log(
+    "------->",
+    new Date('9999-12-30 23:59:59').getTime(),
+    eutil.dateFormat(new Date('9999-12-30 23:59:59'),"yyyy-MM-dd hh:mm:ss S"),
+    eutil.dateFormat(new Date(253402185599000),"yyyy-MM-dd hh:mm:ss S")
+);
+
+
 console.log("**************date**********************");
 console.log("strVerifyPassword -->",eutil.strVerifyPassword("234as5s"));
 console.log("dateGetDataString now-->",eutil.dateGetDataString());
@@ -35,6 +46,8 @@ console.log("dateGetGMT -->",eutil.dateFormat(eutil.dateGetGMT(),"yyyy-MM-dd hh:
 
 /**************str**********************/
 console.log("**************str**********************");
+console.log("strSubLeft -->",eutil.strSubLeft("1234567890",2));
+console.log("strSuRight -->",eutil.strSuRight("1234567890",2));
 console.log("strVerifyPassword -->",eutil.strVerifyPassword("234as5s"));
 console.log("strPadstr R -->",eutil.strPadstr("osmeteor R","###",30));
 console.log("strPadstr L -->",eutil.strPadstr("osmeteor L","###",30,true));
