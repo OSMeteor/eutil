@@ -5,8 +5,12 @@ npm install eutil
 
 https://github.com/node-modules/is-type-of
 ```javascript
-var eutil=require('eutil'); 
-/**************date**********************/
+/**
+ * Created by osmeteor on 4/25/17.
+ */
+
+// var eutil=require('eutil');
+var eutil=require('../index');
 /**************date**********************/
 
 // 开始时间:1900-01-01T00:00:00
@@ -65,4 +69,13 @@ console.log("isJsonObject [] -->",eutil.isJsonObject([]));
 console.log("isJsonObject {} -->",eutil.isJsonObject({}));
 console.log("isJsonObject {} -->",eutil.isJsonObject({}));
 console.log("strReplaceAll  -->",eutil.strReplaceAll("222###,345555,###,5###","###","$$$$"));
+
+eutil.strReplacePromise("#d##date#%#date##date##date##date##date#aaaaa%date1%%date1%%date1%#d#%555%",[
+  {name:'#d#',value:"[bbbb]"},
+  {name:'#date#',value:"[2017]"},
+  {name:'%555%',value:"[啦啦啦啦]"}
+]).then(function(err){
+  console.log(err);
+})
+
 ```

@@ -63,3 +63,11 @@ console.log("isJsonObject {} -->",eutil.isJsonObject({}));
 console.log("isJsonObject {} -->",eutil.isJsonObject({}));
 console.log("strReplaceAll  -->",eutil.strReplaceAll("222###,345555,###,5###","###","$$$$"));
 
+eutil.strReplacePromise("#d##date#%#date##date##date##date##date#aaaaa%date1%%date1%%date1%#d#%555%",[
+  {name:'#d#',value:"[bbbb]"},
+  {name:'#date#',value:"[2017]"},
+  {name:'%555%',value:"[啦啦啦啦]"}
+]).then(function(err){
+  console.log(err);
+})
+
