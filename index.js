@@ -36,6 +36,8 @@ function strReplacePromise(drawTextStr,dReplaceArray){
 module.exports={
    strReplaceAllPromise:strReplaceAllPromise,
    strReplacePromise:strReplacePromise,
+   getTimeSeconds:dt.getTimeSeconds,
+   getTimeSecondsDate:dt.getTimeSecondsDate,
    dateFormat:dt.dateFormat,
    dateGetDataString:dt.dateGetDataString,
    dateGetDataStringNUmber:dt.dateGetDataStringNUmber,
@@ -66,6 +68,7 @@ module.exports={
    dateGetDayOfDaybreakSectionDayBefore:dt.dateGetDayOfDaybreakSectionDayBefore,
    dateGetDayOfDaybreakSectionDayNext:dt.dateGetDayOfDaybreakSectionDayNext,
    isUndefined:tf.isUndefined,
+   isPromise:tf.isPromise,
    isDefined:tf.isDefined,
    isObject:tf.isObject,
    isArray:tf.isArray,

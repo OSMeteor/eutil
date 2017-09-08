@@ -11,7 +11,29 @@ https://github.com/node-modules/is-type-of
 
 // var eutil=require('eutil');
 var eutil=require('../index');
+
+
+
 /**************date**********************/
+
+
+function getTimeSeconds(d){
+  var ndate = new Date();
+  if(d) ndate=d;
+  return parseInt(ndate.getTime()/1000)
+};
+function getTimeSecondsDate(d){
+  return new Date(d*1000)
+}; 
+console.log(
+  "------->",
+  eutil.dateFormat(getTimeDate(getTimeSeconds(new Date())),"yyyy-MM-dd hh:mm:ss S")
+);
+console.log(
+  "------->",
+  eutil.dateFormat(new Date(1504864849*1000),"yyyy-MM-dd hh:mm:ss S")
+);
+
 
 // 开始时间:1900-01-01T00:00:00
 // 结束时间:9999-12-31T23:59:59
