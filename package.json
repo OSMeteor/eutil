@@ -1,6 +1,6 @@
 {
   "name": "eutil",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "meteor util node Extended   util",
   "main": "index.js",
   "scripts": {
