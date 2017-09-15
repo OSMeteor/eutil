@@ -125,5 +125,6 @@ module.exports={
    strIsInt:str.strIsInt,
    strCloneObj:str.strCloneObj,
    strBaseConverter:str.strBaseConverter,
-   strPadstr:str.strPadstr
+   strPadstr:str.strPadstr,
+   stripScript:str.stripScript
 };
