@@ -1,10 +1,11 @@
 {
   "name": "eutil",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "meteor util node Extended   util",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "eslint":"eslint **/*.js --fix" 
   },
   "repository": {
     "type": "git",

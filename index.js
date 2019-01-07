@@ -1,39 +1,49 @@
-var dt=require('./lib/date');
-var tf=require('./lib/typeof');
-var str=require('./lib/str');
+ // eslint-disable-next-line space-in-brackets
+var dt = require( './lib/date');
+var tf = require('./lib/typeof');
+var str = require('./lib/str');
 
 
 function strReplaceAllPromise(_str,dReplaceArray,index){
-  if(!tf.isNumber(index))index=-1;
+  if(!tf.isNumber(index)){
+index = -1;
+}
   return new Promise(function (resolve, reject) {
-    if(index>=dReplaceArray.length-1) return resolve(_str);
-    else{
+    if(index >= dReplaceArray.length - 1) {
+return resolve(_str);
+} else{
       index++;
-      if(index==-1) return strReplaceAllPromise(str.strReplaceAll(_str,dReplaceArray[index].name,dReplaceArray[index].value)
+      if(index == -1) {
+return strReplaceAllPromise(str.strReplaceAll(_str,dReplaceArray[index].name,dReplaceArray[index].value)
         ,dReplaceArray,index
       );
-      else
-        return resolve(strReplaceAllPromise(str.strReplaceAll(_str,dReplaceArray[index].name,dReplaceArray[index].value)
+} else {
+return resolve(strReplaceAllPromise(str.strReplaceAll(_str,dReplaceArray[index].name,dReplaceArray[index].value)
           ,dReplaceArray,index
         ));
+}
     }
   });
 }
 function strReplacePromise(drawTextStr,dReplaceArray){
-  var index=0;
+  var index = 0;
   return new Promise(function (resolve, reject) {
-    if(drawTextStr=='') return reject(drawTextStr);
-    else if(!tf.isArray(dReplaceArray)) return reject(drawTextStr);
-    else return resolve([drawTextStr,dReplaceArray,index]);
+    if(drawTextStr == '') {
+return reject(drawTextStr);
+} else if(!tf.isArray(dReplaceArray)) {
+return reject(drawTextStr);
+} else {
+return resolve([drawTextStr,dReplaceArray,index]);
+}
   }).then(function(obj){
     return  strReplaceAllPromise(obj[0],obj[1]);
   }).catch(function(str){
     return str;
-  })
+  });
 };
 
 
-module.exports={
+module.exports = {
    strReplaceAllPromise:strReplaceAllPromise,
    strReplacePromise:strReplacePromise,
    getTimeSeconds:dt.getTimeSeconds,

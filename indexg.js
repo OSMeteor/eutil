@@ -1,30 +1,34 @@
+/* eslint-disable */
 /**
  * Created by meteor on 15/8/12.
  */
 
-var fs=require('fs');
+var fs = require('fs');
 
-var dt=require('./lib/date');
-var tf=require('./lib/typeof');
-var str=require('./lib/str');
+var dt = require('./lib/date');
+var tf = require('./lib/typeof');
+var str = require('./lib/str');
 //
-var  t=0, tlength=Object.keys(str).length;
-var str_index="var dt=require('./lib/date'); \n";
-str_index+="var tf=require('./lib/typeof'); \n";
-str_index+="var str=require('./lib/str'); \n";
-str_index+="module.exports={ \n";
+var  t = 0, tlength = Object.keys(str).length;
+var str_index = 'var dt=require(\'./lib/date\'); \n';
+str_index += 'var tf=require(\'./lib/typeof\'); \n';
+str_index += 'var str=require(\'./lib/str\'); \n';
+str_index += 'module.exports={ \n';
 
 for (var item in dt){
-    str_index+="   "+item+":dt."+item+",\n";
+    str_index += '   ' + item + ':dt.' + item + ',\n';
 }
 for (var item in tf){
-    str_index+="   "+item+":tf."+item+",\n";
+    str_index += '   ' + item + ':tf.' + item + ',\n';
 }
 for (var item in str){
-    t++ ; if (t>=tlength) str_index+="   "+item+":str."+item+"\n";
-    else str_index+="   "+item+":str."+item+",\n";
+    t++ ; if (t >= tlength) {
+str_index += '   ' + item + ':str.' + item + '\n';
+} else {
+str_index += '   ' + item + ':str.' + item + ',\n';
 }
-str_index+="};\n";
+}
+str_index += '};\n';
 fs.writeFile('./index.js', str_index, function(err) {
     if (err) {
         throw err;
