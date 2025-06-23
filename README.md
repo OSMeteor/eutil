@@ -49,6 +49,38 @@ const eutil = require('eutil');
 - `isFunction(value)` - Check for function. **是否为函数**
 - `isBoolean(value)` - Check for boolean. **是否为布尔值**
 - `isMap(value)` - Check for Map. **是否为 Map**
+- `dateFormat(date, fmt)`
+- `dateGetNextDay(date, n)`
+- `dateGetBeforeDay(date, n)`
+- `dateAddMilliseconds(date, n)`
+- `dateAddSeconds(date, n)`
+- `dateAddMinutes(date, n)`
+- `dateAddHours(date, n)`
+- `dateAddDays(date, n)`
+- `dateAddMonth(date, n)`
+- `dateSubMonth(date, n)`
+- `dateAddYears(date, n)`
+- `dateDiff(start, end)`
+- `dateGetGMT()`
+
+### String helpers
+- `strSubLeft(str, len)`
+- `strSubRight(str, len)`
+- `strReplaceAll(str, search, replace)`
+- `strReplaceAll2(str, search, replace)`
+- `strPadstr(str, pad, width, right)`
+- `strRemoveCharAt(str, index)`
+- `strVerifyPassword(str)`
+
+### Type checks
+- `isArray(value)`
+- `isObject(value)`
+- `isString(value)`
+- `isNumber(value)`
+- `isDate(value)`
+- `isFunction(value)`
+- `isBoolean(value)`
+- `isMap(value)`
 
 ### Example
 
