@@ -47,7 +47,7 @@ console.log('dateGetGMT -->',eutil.dateFormat(eutil.dateGetGMT(),'yyyy-MM-dd hh:
 /**************str**********************/
 console.log('**************str**********************');
 console.log('strSubLeft -->',eutil.strSubLeft('1234567890',2));
-console.log('strSuRight -->',eutil.strSuRight('1234567890',2));
+console.log('strSubRight -->',eutil.strSubRight('1234567890',2));
 console.log('strVerifyPassword -->',eutil.strVerifyPassword('234as5s'));
 console.log('strPadstr R -->',eutil.strPadstr('osmeteor R','###',30));
 console.log('strPadstr L -->',eutil.strPadstr('osmeteor L','###',30,true));
