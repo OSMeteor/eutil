@@ -1,103 +1,67 @@
 # eutil
-meteor util node Extended   util
-https://github.com/OSMeteor/eutil.git
+
+A small collection of date, string and type utilities for Node.js.
+
+## Installation
+
+```bash
 npm install eutil
-
-https://github.com/node-modules/is-type-of
-```javascript
-/**
- * Created by osmeteor on 4/25/17.
- */
-
-// var eutil=require('eutil');
-var eutil=require('../index');
-
-
-
-/**************date**********************/
-
-
-function getTimeSeconds(d){
-  var ndate = new Date();
-  if(d) ndate=d;
-  return parseInt(ndate.getTime()/1000)
-};
-function getTimeSecondsDate(d){
-  return new Date(d*1000)
-}; 
-console.log(
-  "------->",
-  eutil.dateFormat(getTimeDate(getTimeSeconds(new Date())),"yyyy-MM-dd hh:mm:ss S")
-);
-console.log(
-  "------->",
-  eutil.dateFormat(new Date(1504864849*1000),"yyyy-MM-dd hh:mm:ss S")
-);
-
-
-// 开始时间:1900-01-01T00:00:00
-// 结束时间:9999-12-31T23:59:59
-console.log(
-    "------->",
-    new Date('9999-12-30 23:59:59').getTime(),
-    eutil.dateFormat(new Date('9999-12-30 23:59:59'),"yyyy-MM-dd hh:mm:ss S"),
-    eutil.dateFormat(new Date(253402185599000),"yyyy-MM-dd hh:mm:ss S")
-);
-
-
-console.log("**************date**********************");
-console.log("strVerifyPassword -->",eutil.strVerifyPassword("234as5s"));
-console.log("dateGetDataString now-->",eutil.dateGetDataString());
-
-console.log("dateGetNextDay  -->",eutil.dateFormat( eutil.dateGetNextDay(null,5),"yyyy-MM-dd hh:mm:ss S"));
-console.log("dateGetBeforeDay  -->",eutil.dateFormat( eutil.dateGetBeforeDay(null,5),"yyyy-MM-dd hh:mm:ss S"));
-var daybreakSection=eutil.dateGetDayOfDaybreakSection(null,5);
-console.log("daybreakSection  -->",eutil.dateFormat(daybreakSection.start,"yyyy-MM-dd hh:mm:ss S")
-    ,'------ ',eutil.dateFormat(daybreakSection.end,"yyyy-MM-dd hh:mm:ss S"));
-var daybreakSectionDay=eutil.dateGetDayOfDaybreakSectionDay(null,6);
-console.log("daybreakSectionDay  -->",eutil.dateFormat(daybreakSectionDay.start,"yyyy-MM-dd hh:mm:ss S")
-    ,'------ ',eutil.dateFormat(daybreakSectionDay.end,"yyyy-MM-dd hh:mm:ss S"));
-var dateGetDayOfDaybreakSectionDayBefore=eutil.dateGetDayOfDaybreakSectionDayBefore(null,6);
-console.log("dateGetDayOfDaybreakSectionDayBefore  -->",eutil.dateFormat(dateGetDayOfDaybreakSectionDayBefore.start,"yyyy-MM-dd hh:mm:ss S")
-    ,'------ ',eutil.dateFormat(dateGetDayOfDaybreakSectionDayBefore.end,"yyyy-MM-dd hh:mm:ss S"));
-var dateGetDayOfDaybreakSectionDayNext=eutil.dateGetDayOfDaybreakSectionDayNext(null,6);
-console.log("dateGetDayOfDaybreakSectionDayNext  -->",eutil.dateFormat(dateGetDayOfDaybreakSectionDayNext.start,"yyyy-MM-dd hh:mm:ss S")
-    ,'------ ',eutil.dateFormat(dateGetDayOfDaybreakSectionDayNext.end,"yyyy-MM-dd hh:mm:ss S"));
-
-
-console.log("dateGetDataStringNUmber now-->",eutil.dateGetDataStringNUmber());
-console.log("dateFormat 1111-->",eutil.dateFormat( eutil.dateGetDayOfStart(),"yyyy-MM-dd hh:mm:ss S"));
-console.log("dateFormat 0000000-->",eutil.dateFormat( eutil.dateGetDayOfEnd(),"yyyy-MM-ddThh:mm:ss S"));
-console.log("dateFormat -->",eutil.dateFormat( eutil.dateGetGMT(),"yyyy-MM-dd hh:mm:ss"));
-console.log("dateGetStandardTimeZone -->",eutil.dateGetStandardTimeZone(new Date()));
-console.log("dateGetDateFromOffset -->",eutil.dateFormat(eutil.dateGetDateFromOffset(eutil.dateGetGMT(),+8),"yyyy-MM-dd hh:mm:ss"));
-console.log("dateGetGMT -->",eutil.dateFormat(eutil.dateGetGMT(),"yyyy-MM-dd hh:mm:ss"));
-
-/**************str**********************/
-console.log("**************str**********************");
-console.log("strSubLeft -->",eutil.strSubLeft("1234567890",2));
-console.log("strSuRight -->",eutil.strSuRight("1234567890",2));
-console.log("strVerifyPassword -->",eutil.strVerifyPassword("234as5s"));
-console.log("strPadstr R -->",eutil.strPadstr("osmeteor R","###",30));
-console.log("strPadstr L -->",eutil.strPadstr("osmeteor L","###",30,true));
-console.log("strBaseConverter -->",eutil.strBaseConverter('osmeteor',10,16));
-console.log("strRemoveCharAt -->",eutil.strRemoveCharAt("1234#67887654321234567",4));
-/**************typeof**********************/
-console.log("**************typeof**********************");
-console.log("isArray  -->",eutil.isArray(""));
-console.log("isArray [] -->",eutil.isArray([]));
-console.log("isArray {} -->",eutil.isArray({}));
-console.log("isJsonObject [] -->",eutil.isJsonObject([]));
-console.log("isJsonObject {} -->",eutil.isJsonObject({}));
-console.log("isJsonObject {} -->",eutil.isJsonObject({}));
-console.log("strReplaceAll  -->",eutil.strReplaceAll("222###,345555,###,5###","###","$$$$"));
-
-eutil.strReplacePromise("#d##date#%#date##date##date##date##date#aaaaa%date1%%date1%%date1%#d#%555%",[
-  {name:'#d#',value:"[bbbb]"},
-  {name:'#date#',value:"[2017]"},
-  {name:'%555%',value:"[啦啦啦啦]"}
-]).then(function(err){
-  console.log(err);
-})
-
 ```
+
+## Usage
+
+```javascript
+const eutil = require('eutil');
+```
+
+## API overview
+
+### Date helpers
+- `dateFormat(date, fmt)` - Format a date. **将日期按指定格式输出**
+- `dateGetNextDay(date, n)` - Get date *n* days later. **获取未来 n 天的日期**
+- `dateGetBeforeDay(date, n)` - Get date *n* days before. **获取过去 n 天的日期**
+- `dateAddMilliseconds(date, n)` - Add milliseconds. **增加毫秒数**
+- `dateAddSeconds(date, n)` - Add seconds. **增加秒数**
+- `dateAddMinutes(date, n)` - Add minutes. **增加分钟数**
+- `dateAddHours(date, n)` - Add hours. **增加小时数**
+- `dateAddDays(date, n)` - Add days. **增加天数**
+- `dateAddMonth(date, n)` - Add months. **增加月份**
+- `dateSubMonth(date, n)` - Subtract months. **减少月份**
+- `dateAddYears(date, n)` - Add years. **增加年份**
+- `dateDiff(start, end)` - Get difference between two dates. **计算两个日期的差值**
+- `dateGetGMT()` - Current GMT time. **获取 GMT 时间**
+
+### String helpers
+- `strSubLeft(str, len)` - Substring from left. **从左侧截取指定长度**
+- `strSubRight(str, len)` - Substring from right. **从右侧截取指定长度**
+- `strReplaceAll(str, search, replace)` - Replace all matches. **全局替换文本**
+- `strReplaceAll2(str, search, replace)` - Replace all with regex support. **正则全局替换**
+- `strPadstr(str, pad, width, right)` - Pad string to width. **字符串填充**
+- `strRemoveCharAt(str, index)` - Remove char at index. **删除指定位置字符**
+- `strVerifyPassword(str)` - Validate simple password. **密码格式校验**
+
+### Type checks
+- `isArray(value)` - Check for Array. **是否为数组**
+- `isObject(value)` - Check for plain object. **是否为对象**
+- `isString(value)` - Check for string. **是否为字符串**
+- `isNumber(value)` - Check for number. **是否为数字**
+- `isDate(value)` - Check for Date. **是否为日期**
+- `isFunction(value)` - Check for function. **是否为函数**
+- `isBoolean(value)` - Check for boolean. **是否为布尔值**
+- `isMap(value)` - Check for Map. **是否为 Map**
+
+### Example
+
+```javascript
+const eutil = require('eutil');
+
+console.log(eutil.dateFormat(new Date(), 'yyyy-MM-dd hh:mm:ss'));
+console.log(eutil.strReplaceAll('a-b-c', '-', '#')); 
+```
+
+For a full list of helpers see [`index.js`](./index.js).
+
+## License
+
+MIT
+
