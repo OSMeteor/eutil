@@ -2,6 +2,8 @@
 
 A small collection of date, string and type utilities for Node.js.
 
+一个提供日期处理、字符串操作以及常用类型判断的 Node.js 工具库，帮助你在项目中快速完成常见的辅助功能。
+
 ## Installation
 
 ```bash
@@ -12,6 +14,46 @@ npm install eutil
 
 ```javascript
 const eutil = require('eutil');
+
+// 常见功能示例，复制即可使用
+const {
+  dateFormat,
+  dateAddDays,
+  dateDiff,
+  dateGetDayOfDaybreakSection,
+  strReplaceAll,
+  strPadstr,
+  strVerifyPassword,
+  strGetExtensionName,
+  isArray,
+  isObject,
+  isString,
+} = eutil;
+
+// 日期处理：格式化时间、计算日期范围
+const now = new Date();
+const formatted = dateFormat(now, 'yyyy-MM-dd hh:mm:ss');
+const threeDaysLater = dateAddDays(now, 3);
+const diffInDays = dateDiff(now, threeDaysLater, 'd');
+const todayRange = dateGetDayOfDaybreakSection(now);
+console.log('当前格式化后的时间:', formatted);
+console.log('三天后的日期:', dateFormat(threeDaysLater, 'yyyy-MM-dd'));
+console.log('与三天后相差的天数:', diffInDays);
+console.log('当天起止时间:', todayRange.start, todayRange.end);
+
+// 字符串工具：批量替换、补齐长度、提取文件扩展名
+const replaced = strReplaceAll('a-b-c', '-', '#');
+const padded = strPadstr('ID42', '0', 6); // 左侧补零到 6 位
+const ext = strGetExtensionName('report.final.xlsx');
+console.log('替换后的字符串:', replaced);
+console.log('补零后的编号:', padded);
+console.log('文件扩展名:', ext);
+
+// 校验工具：密码校验与类型判断
+console.log('密码是否合法:', strVerifyPassword('Aa123!'));
+console.log('是否为数组:', isArray([1, 2, 3]));
+console.log('是否为普通对象:', isObject({ foo: 'bar' }));
+console.log('是否为字符串:', isString('hello eutil'));
 ```
 
 ## API overview
@@ -49,47 +91,6 @@ const eutil = require('eutil');
 - `isFunction(value)` - Check for function. **是否为函数**
 - `isBoolean(value)` - Check for boolean. **是否为布尔值**
 - `isMap(value)` - Check for Map. **是否为 Map**
-- `dateFormat(date, fmt)`
-- `dateGetNextDay(date, n)`
-- `dateGetBeforeDay(date, n)`
-- `dateAddMilliseconds(date, n)`
-- `dateAddSeconds(date, n)`
-- `dateAddMinutes(date, n)`
-- `dateAddHours(date, n)`
-- `dateAddDays(date, n)`
-- `dateAddMonth(date, n)`
-- `dateSubMonth(date, n)`
-- `dateAddYears(date, n)`
-- `dateDiff(start, end)`
-- `dateGetGMT()`
-
-### String helpers
-- `strSubLeft(str, len)`
-- `strSubRight(str, len)`
-- `strReplaceAll(str, search, replace)`
-- `strReplaceAll2(str, search, replace)`
-- `strPadstr(str, pad, width, right)`
-- `strRemoveCharAt(str, index)`
-- `strVerifyPassword(str)`
-
-### Type checks
-- `isArray(value)`
-- `isObject(value)`
-- `isString(value)`
-- `isNumber(value)`
-- `isDate(value)`
-- `isFunction(value)`
-- `isBoolean(value)`
-- `isMap(value)`
-
-### Example
-
-```javascript
-const eutil = require('eutil');
-
-console.log(eutil.dateFormat(new Date(), 'yyyy-MM-dd hh:mm:ss'));
-console.log(eutil.strReplaceAll('a-b-c', '-', '#')); 
-```
 
 For a full list of helpers see [`index.js`](./index.js).
 
