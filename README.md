@@ -2,6 +2,8 @@
 
 A small collection of date, string and type utilities for Node.js.
 
+一个提供日期处理、字符串操作以及常用类型判断的 Node.js 工具库，帮助你在项目中快速完成常见的辅助功能。
+
 ## Installation
 
 ```bash
@@ -12,6 +14,21 @@ npm install eutil
 
 ```javascript
 const eutil = require('eutil');
+
+// 常见功能示例，复制即可使用
+const { dateFormat, strReplaceAll, isArray } = eutil;
+
+// 日期格式化：格式化当前时间为 2024-01-01 08:00:00
+const now = new Date();
+const formatted = dateFormat(now, 'yyyy-MM-dd hh:mm:ss');
+console.log('当前格式化后的时间:', formatted); // 输出类似 2024-01-01 08:00:00
+
+// 字符串替换：将字符串中的 - 替换为 #
+const replaced = strReplaceAll('a-b-c', '-', '#');
+console.log('替换后的字符串:', replaced); // 输出 a#b#c
+
+// 类型判断：快速判断一个值是否为数组
+console.log('是否为数组:', isArray([1, 2, 3])); // 输出 true
 ```
 
 ## API overview
@@ -49,38 +66,6 @@ const eutil = require('eutil');
 - `isFunction(value)` - Check for function. **是否为函数**
 - `isBoolean(value)` - Check for boolean. **是否为布尔值**
 - `isMap(value)` - Check for Map. **是否为 Map**
-- `dateFormat(date, fmt)`
-- `dateGetNextDay(date, n)`
-- `dateGetBeforeDay(date, n)`
-- `dateAddMilliseconds(date, n)`
-- `dateAddSeconds(date, n)`
-- `dateAddMinutes(date, n)`
-- `dateAddHours(date, n)`
-- `dateAddDays(date, n)`
-- `dateAddMonth(date, n)`
-- `dateSubMonth(date, n)`
-- `dateAddYears(date, n)`
-- `dateDiff(start, end)`
-- `dateGetGMT()`
-
-### String helpers
-- `strSubLeft(str, len)`
-- `strSubRight(str, len)`
-- `strReplaceAll(str, search, replace)`
-- `strReplaceAll2(str, search, replace)`
-- `strPadstr(str, pad, width, right)`
-- `strRemoveCharAt(str, index)`
-- `strVerifyPassword(str)`
-
-### Type checks
-- `isArray(value)`
-- `isObject(value)`
-- `isString(value)`
-- `isNumber(value)`
-- `isDate(value)`
-- `isFunction(value)`
-- `isBoolean(value)`
-- `isMap(value)`
 
 ### Example
 
